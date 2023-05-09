@@ -24,3 +24,22 @@ def pivot_index(nums)
     end
   end
 end
+
+# https://leetcode.com/problems/isomorphic-strings/submissions/945257418/?envType=study-plan&id=level-1
+
+def is_isomorphic(s, t)
+  judging(s) == judging(t)
+end
+
+def judging(str)
+ arr = str.split(//)
+ result = {}
+ arr.each_with_index do |s, i|
+   if result.has_key?(s)
+     result[s].push(i)
+   else
+     result.merge!({s => [i]})
+   end
+ end
+ result.values
+end
