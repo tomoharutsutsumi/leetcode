@@ -43,3 +43,21 @@ def judging(str)
  end
  result.values
 end
+
+
+# https://leetcode.com/problems/merge-two-sorted-lists/submissions/945709639/?envType=study-plan&id=level-1
+
+def pushing(node, list_arr)
+  if node != nil
+    list_arr.push(node.val)
+    pushing(node.next, list_arr)
+  end
+end
+
+def merge_two_lists(list1, list2)
+  list1_arr = []
+  list2_arr = []
+  pushing(list1, list1_arr) if list1 != nil
+  pushing(list2, list2_arr) if list2 != nil
+  (list1_arr + list2_arr).sort
+end
