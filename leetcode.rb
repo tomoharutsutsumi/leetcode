@@ -61,3 +61,14 @@ def merge_two_lists(list1, list2)
   pushing(list2, list2_arr) if list2 != nil
   (list1_arr + list2_arr).sort
 end
+
+# https://leetcode.com/problems/reverse-linked-list/?envType=study-plan&id=level-1
+
+def reverse_list(head)
+  arr = []
+  while head != nil do
+    arr.push(head.val)
+    head = head.next
+  end
+  arr.reverse
+end
